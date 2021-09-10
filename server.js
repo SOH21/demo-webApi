@@ -1,15 +1,16 @@
 import express from "express";
-import serverConfig from "./config/serverConfig.json";
+import config from "./config/config.js";
+
 import router from './routes/index.js';
 
 //creation du serveur
 const app = express();
 
-//chargement du fichier config      
+//Chargement de la config
 
-const config = process.argv.includes('--production') ? serverConfig.production : serverConfig.developpement
+const { port, mode } = config.load();
 
-const { port, mode, dbConnection } = config;
+
 
 //ajout middleware
 
