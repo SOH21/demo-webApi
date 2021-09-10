@@ -1,0 +1,9 @@
+CREATE TABLE todo(
+
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR (1000) NOT NULL,
+    description VARCHAR(1000) NULL,
+    isDone BOOLEAN DEFAULT 0
+
+)
