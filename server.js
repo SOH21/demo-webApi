@@ -1,6 +1,6 @@
 import express from "express";
 import config from "./config/config.js";
-
+import mysql from 'promise-mysql'
 import router from './routes/index.js';
 
 //creation du serveur
@@ -8,7 +8,26 @@ const app = express();
 
 //Chargement de la config
 
-const { port, mode } = config.load();
+const { port, mode, dbConnection } = config.load();
+
+//verification connection db
+
+
+mysql.createConnection(dbConnection)
+    .then(connection => {
+        connection.end();
+
+    })
+
+.catch(e => {
+
+    console.log("la config MYSQL est érroné");
+    console.log('error message :' + e.sqlMessage);
+    process.exit();
+});
+
+
+
 
 
 

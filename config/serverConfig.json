@@ -4,8 +4,12 @@
 
         "mode": "dev",
         "port": 5000,
-
-        "dbConnection": "???"
+        "dbConnection": {
+            "host": "localhost",
+            "user": "root",
+            "password": "",
+            "database": "todoapi"
+        }
     },
     "production": {
 
