@@ -1,0 +1,20 @@
+{
+
+    "developpement": {
+
+        "mode": "dev",
+        "port": 5000,
+
+        "dbConnection": "???"
+    },
+    "production": {
+
+        "mode": "prod",
+        "port": 5123,
+
+        "dbConnection": "???"
+    }
+
+
+
+}
